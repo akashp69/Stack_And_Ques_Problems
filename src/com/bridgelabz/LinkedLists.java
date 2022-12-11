@@ -1,62 +1,34 @@
 package com.bridgelabz;
 
-
-
 public class LinkedLists<T> {
     Node<T> head;
     Node<T> tail;
 
     /**
-     * add new values
+    *Append data One By One
      */
-
-    public void push(T datas) {
-        Node<T> newNode = new Node(datas);
+    public void append(T data) {
+        Node <T> newNode = new Node(data);
         if (head == null) {
             head = newNode;
             tail = newNode;
         } else {
-            newNode.next = head;
-            head = newNode;
+            tail.next = newNode;
+            tail = newNode;
         }
     }
 
     /**
-     *  Display all Node with Value
+     *Display all the Node with value
      */
-
     public void display() {
-        Node<T> current = head;
+        Node <T> current = head;
         if (head == null) {
-            System.out.println("List is empty");
+            System.out.println("List is Empty");
         }
         while (current != null) {
             System.out.println(current.data + " ");
             current = current.next;
         }
     }
-
-    /**
-     * Using Pop method to pop all elements
-     */
-
-    public void pop() {
-        Node<T> current = head;
-        while (current != null) {
-            if (current == head) {
-                head = head.next;
-                current = head;
-            }
-        }
-    }
-
-    /**
-     * Using peak method to find top of the Element
-     */
-
-    public T peak() {
-        Node<T> current1 = head;
-        return current1.data;
-    }
-
 }
