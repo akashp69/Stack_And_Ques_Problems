@@ -12,6 +12,7 @@ public class LinkedListMain {
         operationStack.display();
         System.out.println("Peak Element is = " + operationStack.peak());
         operationStack.pop();
+        operationStack.display();
 
 
     }
